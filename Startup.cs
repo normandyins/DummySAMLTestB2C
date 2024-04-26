@@ -22,7 +22,7 @@ namespace SAMLTEST
                 IsDevelopment = true;
                 // Use Developer page error handling for development.
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+               // app.UseBrowserLink();
             }
             else
             {
@@ -34,12 +34,20 @@ namespace SAMLTEST
             }
 
             // Use Status Code error handling to our custom page.
-            app.UseStatusCodePagesWithRedirects("/Error?StatusCode={0}");
+            //app.UseStatusCodePagesWithRedirects("/Error?StatusCode={0}");
             // For the wwwroot folder
             app.UseStaticFiles();
             app.UseSession();
-            app.UseMvc();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages(); // This maps all Razor Pages by default
+            });
+
         }
-        
+
     }
 }
