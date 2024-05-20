@@ -1,0 +1,51 @@
+﻿@page
+@model SAMLTEST.Pages.MetadataModel
+@{
+
+        Layout = null;
+        Response.ContentType = "text/xml";
+ }
+<?xml version="1.0" encoding="utf-8" ?>
+<md:EntityDescriptor entityID="https://live.origamirisk.com/Origami/Mission-Dev" ID="_23FB12A1376572DF4F3D0AEE562A2916" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata">
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+            <Reference URI="#_23FB12A1376572DF4F3D0AEE562A2916">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+                        <InclusiveNamespaces PrefixList="#default md saml ds xs xsi" xmlns="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                    </Transform>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+                <DigestValue>xLqYsusbG21G8dGg7n/7KneXTQQ=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>tztWmnU9XT3gZxRqO4ghGHYd07V1MN5TSD9ir3QIafCdkbM7Bae++LNK01ckjZvER/PjiCHQnCxIb5qKeQpYABNWkg30//7M3yI209p9aEi64mSdOATpDiUw/J/scQBFsdOfwo1iYoYPFGtlwdwdizI2ne123ErHQ1ZquzizGCykGGTzfVPK192kjSTeC31BD0dG7ym0qFTJ29OqNoYsrhgLQtAavwrSnspdEV/u38VxN0a5L3b+4w9wd375FXn7K2CfP5mSu0hPPSGpegCIXH3KSEKxCyGLCl4fuq1NXrRztQFXgDb0ut6aWuVFBho9b1NKW6o1WMBw/vJvwmOQAw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+    <md:IDPSSODescriptor ID="_E9A5AE805FA9ADA4F4812ADE63C782C7" WantAuthnRequestsSigned="false">
+        <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-REDIRECT" Location="https://live.origamirisk.com/Origami/Account/Login?account=Mission-Dev" />
+    </md:IDPSSODescriptor>
+    <md:SPSSODescriptor ID="_8DAFFE548F2ECACC8A9D15A51677F044" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" AuthnRequestsSigned="true" WantAssertionsSigned="false">
+        <md:KeyDescriptor use="encryption">
+            <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <X509Data>
+                    <X509Certificate>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</X509Certificate>
+                </X509Data>
+            </KeyInfo>
+        </md:KeyDescriptor>
+        <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+        <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://live.origamirisk.com/Origami/SSO/SamlLogin?providerAccount=Mission-Dev&amp;issuerName=Normandy" index="0" isDefault="true" />
+    </md:SPSSODescriptor>
+    <md:Organization>
+        <md:OrganizationName xml:lang="en">Origami Risk, LLC</md:OrganizationName>
+        <md:OrganizationDisplayName xml:lang="en">Origami Risk, LLC</md:OrganizationDisplayName>
+        <md:OrganizationURL xml:lang="en">http://www.origamirisk.com</md:OrganizationURL>
+    </md:Organization>
+</md:EntityDescriptor>
